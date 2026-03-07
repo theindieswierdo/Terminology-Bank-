@@ -1,0 +1,22 @@
+---
+export interface Props{
+    title: string;
+    subhead: string;
+
+}
+const { title, subhead} = Astro.props;
+import '../styles/input.css';
+---
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon link will go here-->
+    <title>Terminology Bank</title>
+</head>
+<body class="p-4 m-2 flex-col justify-center bg-zinc-200">
+    <h2 class="text-lg">{title}</h2>
+    <h1 class="text-2xl">{subhead}</h1>
+    <slot /> <!-- contents in the section -->
+</body>
+</html>

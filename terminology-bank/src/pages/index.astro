@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title='Terminology Bank' subhead='welcome back bookworm!'>
+    <a href="/AddWord">
+		<div class="border-2 border-gray-300 p-4 mt-4 bg-slate-50">
+			<p>New word today?</p>
+		</div>
+	</a>
+    <hr class="my-4 border-gray-500" />
+    <h2 class="text-xl">previous words</h2>
+    <div class="border-2 border-yellow-300 p-4 mt-4 bg-yellow-50">
+        <!-- think about words to be displayed and loops -->
+        <ul class="list-disc pl-5">
+            <li><a href="#">word 1</a></li>
+            <li><a href="#">word 2</a></li>
+            <li><a href="#">word 3</a></li>
+            <li><a href="#">word 4</a></li>  
+            <li><a href="#">word 5</a></li>
+            <li><a href="#">word 6</a></li>       
+        </ul>
+    </div>	
+</Layout>
