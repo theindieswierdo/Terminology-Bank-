@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="[Name's]" subhead="terminology bank">
+    <hr class="my-4 border-gray-500" />
+    <div class="border-2 border-yellow-300 p-4 mt-4 bg-yellow-50">
+        <!-- think about words to be displayed and loops -->
+        <ul class="list-disc pl-5">
+            <li><a href="#">word 1</a></li>
+            <li><a href="#">word 2</a></li>
+            <li><a href="#">word 3</a></li>
+            <li><a href="#">word 4</a></li>
+            <li><a href="#">word 5</a></li>
+            <li><a href="#">word 6</a></li>
+        </ul>
+        <a href="/AddWord">
+            <button class="mt-4 px-4 py-2 bg-zinc-50 border-2 border-zinc-950 rounded-md hover:bg-neutral-100 hover:cursor-pointer">
+                add word
+            </button>
+        </a>
+    </div>
+</Layout>

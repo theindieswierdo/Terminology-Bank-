@@ -1,18 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import icon from '../assets/icons/magnifier.png';
+import Layout from "../layouts/Layout.astro";
 ---
-<Layout title='New word' subhead='add a new word to your bank!'>
-       <!-- Single container with relative positioning -->
-    <div class="relative m-2">
-        <div class="flex items-center rounded-md p-4 bg-slate-50 pl-3 outline-1 -outline-offset-1 outline-gray-600">
-            <input id="search-bar" placeholder="enter word" type="text" class="w-full p-2"/>   
-        </div>
-        <button class="absolute right-4 top-1/2 transform -translate-y-1/2 hover:bg-gray-100 rounded-md hover:cursor-pointer">
-            <img src={icon.src} alt="search icon" class="h-8 w-8 sm:h-10 sm:w-10">
-        </button>
-    </div>
-    <div class="border-2 border-gray-950 p-4 mt-4 bg-slate-50">
+<Layout title="previous words" subhead="[word]">
+    <hr class="my-4 border-gray-500" />
+    <p>Thursday 12 December 2005</p>
+    <p>at 8:40pm</p>
+    <div class="border-2 border-amber-300 p-4 mt-4 bg-yellow-50">
         <h1 class="text-2xl">Meaning</h1>
         <p>
             Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
@@ -27,10 +20,16 @@ import icon from '../assets/icons/magnifier.png';
             urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
         </p>
     </div>
-    <div>
-        <input id="book-ref" type="text" placeholder="book reference" class="w-full p-2 mt-4 border-2 border-gray-300 rounded-md shadow-md bg-slate-50"/>
+    <p class="text-lg mt-5">The book you got it from</p>
+    <div class="border-2 border-amber-300 p-4 mt-4 bg-yellow-50">
+        <h1 class="text-2xl">Book Name</h1>
+        <p>
+            By [Author Name]
+        </p>
     </div>
-    <button class="mt-4 px-4 py-2 bg-yellow-50 border-2 border-gray-950 rounded-md hover:bg-yellow-100 hover:cursor-pointer">
-        Save
-    </button>
+    <a href="/AddWord">
+        <button class="mt-4 px-4 py-2 bg-zinc-50 border-2 border-zinc-950 rounded-md hover:bg-neutral-100 hover:cursor-pointer">
+            add word
+        </button>
+    </a>
 </Layout>

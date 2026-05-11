@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const previewPage = "window.location.href='/wordPreview'";
 ---
 
 <Layout title='Terminology Bank' subhead='welcome back bookworm!'>
@@ -10,15 +11,16 @@ import Layout from '../layouts/Layout.astro';
 	</a>
     <hr class="my-4 border-gray-500" />
     <h2 class="text-xl">previous words</h2>
-    <div class="border-2 border-yellow-300 p-4 mt-4 bg-yellow-50">
+    
+    <div onclick={previewPage} class="border-2 border-yellow-300 p-4 mt-4 bg-yellow-50">
         <!-- think about words to be displayed and loops -->
         <ul class="list-disc pl-5">
             <li><a href="#">word 1</a></li>
             <li><a href="#">word 2</a></li>
             <li><a href="#">word 3</a></li>
-            <li><a href="#">word 4</a></li>  
+            <li><a href="#">word 4</a></li>
             <li><a href="#">word 5</a></li>
-            <li><a href="#">word 6</a></li>       
+            <li><a href="#">word 6</a></li>
         </ul>
-    </div>	
+    </div>
 </Layout>
