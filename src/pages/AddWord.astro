@@ -1,18 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import icon from '../assets/icons/magnifier.png';
+import { fetchDefinition, saveWord } from '../utils/api';
 ---
 <Layout title='New word' subhead='add a new word to your bank!'>
        <!-- Single container with relative positioning -->
     <div class="relative m-2">
-        <div class="flex items-center rounded-md p-4 bg-slate-50 pl-3 outline-1 -outline-offset-1 outline-gray-600">
+        <div id="word-input" class="flex items-center rounded-md p-4 bg-slate-50 pl-3 outline-1 -outline-offset-1 outline-gray-600">
             <input id="search-bar" placeholder="enter word" type="text" class="w-full p-2"/>   
         </div>
-        <button class="absolute right-4 top-1/2 transform -translate-y-1/2 hover:bg-gray-100 rounded-md hover:cursor-pointer">
+        <button id="search-btn" class="absolute right-4 top-1/2 transform -translate-y-1/2 hover:bg-gray-100 rounded-md hover:cursor-pointer">
             <img src={icon.src} alt="search icon" class="h-8 w-8 sm:h-10 sm:w-10">
         </button>
     </div>
-    <div class="border-2 border-gray-950 p-4 mt-4 bg-slate-50">
+    <div id="meaning" class="border-2 border-gray-950 p-4 mt-4 bg-slate-50">
         <h1 class="text-2xl">Meaning</h1>
         <p>
             Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
@@ -33,4 +34,15 @@ import icon from '../assets/icons/magnifier.png';
     <button class="mt-4 px-4 py-2 bg-yellow-50 border-2 border-gray-950 rounded-md hover:bg-yellow-100 hover:cursor-pointer">
         Save
     </button>
+    <script type="module">
+        const searchBtn = document.getElementById('search-btn');
+        const wordInput = document.getElementById('word-input');
+        const meaningDiv = document.getElementById('meaning');
+
+        searchBtn?.addEventListener('click', async () => {
+            const word = wordInput.value;
+            const data = await fetchDefinition(word);
+            meaningDiv.textContent = data.definition;
+        });
+    </script>
 </Layout>
